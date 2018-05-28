@@ -1,5 +1,13 @@
 .access-section-form {
   margin-top: 30px;
+  .access-form-inputs {
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
   #email, #submit {
     padding: 16px;
     font-size: 16px;
@@ -8,11 +16,20 @@
   }
   #email {
     min-width: 400px;
-    color: $dark-blue;
     border: solid 1px $red;
+    color: $dark-blue;
+    @media (max-width: 768px) {
+      min-width: 100%;
+      margin-bottom: 10px;
+    }
   }
   #submit {
     background-color: $red;
+    border: solid 1px $red;
     color:white;
+    @media (max-width: 768px) {
+      min-width: 100%;
+      margin-bottom: 10px;
+    }
   }
 }
