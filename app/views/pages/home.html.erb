@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="banner" style="background-image: url('<%= image_url("landing-bg.png") %>');">
+  <div class="container">
+    <div class="navbar">
+      <%= image_tag 'logo-full.png' %>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-sm-offset-3">
+        <h1>Simplifiez la gestion de votre CSE</h1>
+        <p>Clan vous permet d'automatiser la gestion de votre CSE</p>
+        <div class="access-section-form">
+          <%= form_tag access_request_path, class: "access-form" do %>
+            <div class="access-form-inputs">
+              <%= text_field_tag 'email', nil, placeholder: "Email" %>
+              <%= button_tag "Demander un accès", id: "submit" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
