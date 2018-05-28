@@ -1,1 +1,21 @@
-// Specific CSS for your home-page
+.banner {
+  height: 100vh;
+  background-size: cover;
+  background-color: white;
+  .navbar {
+    padding: 20px 40px;
+    img {
+      width: 100px;
+    }
+  }
+  color: $dark-blue;
+  h1 {
+    font-size: 65px;
+    font-weight: 900;
+    margin-top: 200px;
+  }
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
