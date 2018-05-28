@@ -3,17 +3,18 @@ class AccessesController < ApplicationController
 
   def access_request
     @access = Access.new(access_request_params)
-    authorize @access
     if @access.save
-      redirect_to root_path, :flash => { :notice => "Vous êtes bien enregistrés sur notre liste d'attente. Nous vous enverons rapidement un email à #{@access.email}." }
+      redirect_to root_path, :flash => { :notice => "#{@access.email} est bien enregistré sur liste d'attente." }
+    elsif Access.find_by(email: @access.email)
+      redirect_to root_path, :flash => { :notice => "#{@access.email} est bien enregistré sur liste d'attente." }
     else
-      redirect_to access_path, :flash => { :alert => "Nous avons rencontré un problème lors de votre inscription." }
+      redirect_to root_path, :flash => { :alert => "Nous avons rencontré un problème lors de votre inscription." }
     end
   end
 
   private
 
   def access_request_params
-    params.permit(:first_name, :last_name, :email)
+    params.permit(:email)
   end
 end
