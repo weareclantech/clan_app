@@ -6,7 +6,7 @@ class AccessesController < ApplicationController
     if @access.save
       redirect_to root_path, :flash => { :notice => "#{@access.email} est bien enregistré sur liste d'attente." }
     elsif Access.find_by(email: @access.email)
-      redirect_to root_path, :flash => { :notice => "#{@access.email} est bien enregistré sur liste d'attente." }
+      redirect_to root_path, :flash => { :notice => "#{@access.email} est déjà sur notre liste d'attente." }
     else
       redirect_to root_path, :flash => { :alert => "Nous avons rencontré un problème lors de votre inscription." }
     end
