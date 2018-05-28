@@ -4,12 +4,22 @@
       <%= image_tag 'logo-full.png' %>
     </div>
     <div class="row">
-      <div class="col-sm-3">
-
-      </div>
-      <div class="col-xs-12 col-sm-9">
+      <div class="col-xs-12 col-sm-9 col-sm-offset-3">
         <h1>Simplifiez la gestion de votre CSE</h1>
         <p>Clan vous permet d'automatiser la gestion de votre CSE</p>
+        <div class="access-section-form text-center">
+          <%= form_tag access_request_path, class: "access-form" do %>
+            <div class="access-form-title">
+              <h1>Demander un accès</h1>
+            </div>
+            <div class="access-form-inputs">
+              <%= text_field_tag 'first_name', nil, placeholder: "Prénom" %>
+              <%= text_field_tag 'last_name', nil, placeholder: "Nom" %>
+              <%= text_field_tag 'email', nil, placeholder: "Email" %>
+              <%= button_tag "Demander un accès", id: "submit" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
